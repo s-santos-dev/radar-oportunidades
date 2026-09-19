@@ -13,7 +13,6 @@ radar-vercel/
 ├── js/
 │   ├── data.js       # Integração com Google Sheets (loader + fallback)
 │   └── app.js        # Renderização, filtros, modal e KPIs
-├── vercel.json       # Configuração de deploy (opcional)
 └── README.md
 ```
 
