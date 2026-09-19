@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Radar de Oportunidades Tech — Simão</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 <base target="_blank">
 </head>
@@ -13,9 +16,15 @@
   <!-- Header -->
   <header>
     <div class="header-top">
-      <div>
-        <h1>🎯 RADAR DE OPORTUNIDADES TECH — SIMÃO</h1>
-        <p class="subtitle">Agente Inteligente de Pesquisa, Monitoramento e Gestão de Hackathons, Desafios de IA e Editais de Inovação</p>
+      <div class="header-identity">
+        <div class="radar-mark" aria-hidden="true">
+          <span class="radar-sweep"></span>
+          <span class="radar-dot"></span>
+        </div>
+        <div>
+          <h1>Radar de Oportunidades Tech</h1>
+          <p class="subtitle">Monitoramento de hackathons, desafios de IA e editais de inovação — priorizado para Simão em Teresina, PI</p>
+        </div>
       </div>
       <div class="header-badges">
         <div class="badge-status" id="sync-status">
@@ -23,7 +32,7 @@
           <span id="sync-status-text">Carregando dados...</span>
         </div>
         <a href="https://docs.google.com/spreadsheets/d/1pflgLAckgx3keRJLka9_15uZIMCWx8RjBO-8Chb7zKw/edit" target="_blank" rel="noopener noreferrer" class="btn-sheet">
-          📊 Abrir Planilha Oficial no Google Sheets
+          Abrir planilha oficial
         </a>
       </div>
     </div>
@@ -32,12 +41,12 @@
   <!-- Metrics Grid -->
   <div class="metrics-grid">
     <div class="metric-card">
-      <span class="metric-title">Total Cadastradas</span>
+      <span class="metric-title">Total cadastradas</span>
       <span class="metric-value" id="kpi-total">0</span>
       <span class="metric-sub">Eventos mapeados</span>
     </div>
     <div class="metric-card">
-      <span class="metric-title">Inscrições Abertas</span>
+      <span class="metric-title">Inscrições abertas</span>
       <span class="metric-value" style="color: #34d399;" id="kpi-open">0</span>
       <span class="metric-sub">Disponíveis agora</span>
     </div>
@@ -47,17 +56,17 @@
       <span class="metric-sub">Teresina e região</span>
     </div>
     <div class="metric-card highlight-urgent">
-      <span class="metric-title">Prazos Próximos</span>
+      <span class="metric-title">Prazos próximos</span>
       <span class="metric-value" style="color: #f59e0b;" id="kpi-urgent">0</span>
       <span class="metric-sub">Encerrando em ≤ 15 dias</span>
     </div>
     <div class="metric-card">
-      <span class="metric-title">Submissão Projetos/MVP</span>
+      <span class="metric-title">Submissão projetos/MVP</span>
       <span class="metric-value" style="color: #38bdf8;" id="kpi-submission">0</span>
       <span class="metric-sub">Aceitam soluções de software/IA</span>
     </div>
     <div class="metric-card">
-      <span class="metric-title">Última Atualização</span>
+      <span class="metric-title">Última atualização</span>
       <span class="metric-value" style="font-size: 1.15rem; margin-top: 10px;" id="kpi-updated">—</span>
       <span class="metric-sub">Verificação diária oficial</span>
     </div>
@@ -66,13 +75,13 @@
   <!-- Filters Section -->
   <div class="filters-section">
     <div class="search-row">
-      <input type="text" id="filter-search" class="search-input" placeholder="🔍 Pesquise por nome do evento, instituição organizadora, cidade ou palavra-chave...">
+      <input type="text" id="filter-search" class="search-input" placeholder="Pesquise por nome do evento, instituição organizadora, cidade ou palavra-chave...">
     </div>
     <div class="filter-grid">
       <div class="filter-group">
-        <label for="filter-priority">Prioridade / Região</label>
+        <label for="filter-priority">Prioridade / região</label>
         <select id="filter-priority" class="filter-select">
-          <option value="all">Todas as Regiões</option>
+          <option value="all">Todas as regiões</option>
           <option value="PI">Prioridade 1: Piauí</option>
           <option value="Nordeste">Prioridade 2: Nordeste</option>
           <option value="Brasil">Prioridade 3: Brasil</option>
@@ -82,13 +91,13 @@
       <div class="filter-group">
         <label for="filter-category">Categoria</label>
         <select id="filter-category" class="filter-select">
-          <option value="all">Todas as Categorias</option>
+          <option value="all">Todas as categorias</option>
         </select>
       </div>
       <div class="filter-group">
-        <label for="filter-format">Formato / Modalidade</label>
+        <label for="filter-format">Formato / modalidade</label>
         <select id="filter-format" class="filter-select">
-          <option value="all">Todos os Formatos</option>
+          <option value="all">Todos os formatos</option>
           <option value="Presencial">Presencial</option>
           <option value="Híbrido">Híbrido</option>
           <option value="Online">Online</option>
@@ -103,19 +112,19 @@
         </select>
       </div>
       <div class="filter-group">
-        <label for="filter-submission">Submissão de Projetos</label>
+        <label for="filter-submission">Submissão de projetos</label>
         <select id="filter-submission" class="filter-select">
           <option value="all">Todos</option>
-          <option value="Sim">Aceita Projetos / MVP</option>
-          <option value="Não">Apenas Participação</option>
+          <option value="Sim">Aceita projetos / MVP</option>
+          <option value="Não">Apenas participação</option>
         </select>
       </div>
       <div class="filter-group">
         <label for="filter-order">Ordenação</label>
         <select id="filter-order" class="filter-select">
-          <option value="deadline-asc">Prazo Mais Urgente</option>
-          <option value="priority">Prioridade Geográfica (PI primeiro)</option>
-          <option value="relevance">Maior Relevância</option>
+          <option value="deadline-asc">Prazo mais urgente</option>
+          <option value="priority">Prioridade geográfica (PI primeiro)</option>
+          <option value="relevance">Maior relevância</option>
         </select>
       </div>
     </div>
@@ -123,10 +132,10 @@
     <!-- Sync Box -->
     <div class="sync-box">
       <div class="sync-info">
-        🔗 Conexão Google Sheets ID: <code style="color: #38bdf8;">1pflgLAckgx3keRJLka9_15uZIMCWx8RjBO-8Chb7zKw</code>
+        Conexão Google Sheets ID: <code id="sheet-id-code">1pflgLAckgx3keRJLka9_15uZIMCWx8RjBO-8Chb7zKw</code>
       </div>
       <div style="display:flex; gap:8px;">
-        <button id="btn-sync-now" class="btn-sync">🔄 Sincronizar com Planilha</button>
+        <button id="btn-sync-now" class="btn-sync">Sincronizar com planilha</button>
       </div>
     </div>
   </div>
@@ -134,13 +143,13 @@
   <!-- Events List -->
   <div class="events-grid" id="events-container">
     <div class="empty-state">
-      <h3>⏳ Carregando oportunidades...</h3>
+      <h3>Carregando oportunidades</h3>
       <p>Buscando dados direto do Google Sheets.</p>
     </div>
   </div>
 
   <footer>
-    <p>Radar de Oportunidades Tech — Simão &bull; Dados sincronizados do Google Sheets</p>
+    <p>Radar de Oportunidades Tech — Simão · Dados sincronizados do Google Sheets</p>
   </footer>
 </div>
 
